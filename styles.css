@@ -30,3 +30,19 @@ body {
   color: black;
   font-weight: bold;
 }
+
+#notes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 100px;
+  text-align: center;
+}
+
+.note_design {
+  background-image: url("images/note.png");
+  background-position: center;
+  padding: 100px;
+}

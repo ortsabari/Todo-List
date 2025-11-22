@@ -36,7 +36,7 @@ function newTask(event) {
 // function to render array from localstorage and convert to class
 function renderArray() {
   const taskList = [];
-  const localGet = JSON.parse(localStorage.getItem("tasklist"));
+  const localGet = JSON.parse(localStorage.getItem("tasklist")) || [];
   for (let i = 0; i < localGet.length; i++) {
     const local = localGet[i];
     const taskNewObj = new Task(local.description, local.date, local.time);
@@ -47,9 +47,12 @@ function renderArray() {
 
 // function to create new task note
 function generateNewNote() {
+  // intizalizing parent div & p for note content
   const notes = document.querySelector("#notes");
   notes.innerHTML = "";
   for (let i = 0; i < taskList.length; i++) {
+    const contentContainer = document.createElement("div");
+    contentContainer.setAttribute("class", "note_design");
     const list = taskList[i];
 
     const noteFirstP = document.createElement("p");
@@ -64,6 +67,7 @@ function generateNewNote() {
     noteThirdP.innerText = list.time;
     noteThirdP.setAttribute("class", "timepara");
 
-    notes.append(noteFirstP, noteSecondP, noteThirdP);
+    contentContainer.append(noteFirstP, noteSecondP, noteThirdP);
+    notes.append(contentContainer);
   }
 }
