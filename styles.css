@@ -74,6 +74,23 @@ button {
   /* background-color: coral; */
 }
 
+.content_para {
+  /* position: relative;
+  top: -50px;
+  bottom: 500px; */
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.datepara,
+.timepara {
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .note_design {
   display: flex;
   justify-content: center;
@@ -83,15 +100,18 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 500px;
-  width: 350px;
+  animation: slideInLeft 2.2s ease-out;
 }
 
-.content_para {
-  margin: 0 auto;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .cancel {
